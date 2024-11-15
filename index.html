@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Website</title>
+    <link rel="stylesheet" href="main.css">
+    <!-- Google Fonts for Mysterious Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header-bar">
+        <div class="icon-container">
+            <a href="https://x.com/urge_to_sell" target="_blank" class="icon-link">
+                <img src="images/1707226109new-twitter-logo-png.png" alt="Twitter" class="icon">
+            </a>
+            <a href="https://t.me/+9ZZ_ziqI0TNlYjU0" target="_blank" class="icon-link">
+                <img src="images/Telegram_logo.svg (1).jpg" alt="Telegram" class="icon">
+            </a>
+            <a href="https://pump.fun/board" target="_blank" class="icon-link">
+                <img src="images/BBqyuDPm_400x400.png" alt="Pumpfun" class="icon">
+            </a>
+        </div>
+    </header>
+
+
+    <!-- Entry Screen (Portal) -->
+    <div id="portal" class="portal">
+        <!-- Background Audio -->
+        <audio autoplay loop id="background-audio" volume="0.5">
+            <source src="images/connection-established-ai-male-joshua-chivers-1-00-01.mp3" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+
+        <h1></h1>
+        <button id="enter-button" onclick="enterChat()">
+            <img src="images/Progetto senza titolo (54).png" alt="Enter" id="enter-icon">
+        </button>
+    </div>
+
+    <!-- Main Content (Chat Interface) -->
+    <div id="main-content" class="main-content" style="display: none;">
+        <!-- Background Image -->
+        <div class="background">
+            <h1></h1>
+        </div>
+
+        <!-- Chat Container -->
+        <div class="chat-container">
+            <div id="chatbox">
+                <div id="messages"></div>
+                <input type="text" id="userInput" placeholder="Type a message..." onkeydown="if(event.key === 'Enter') sendMessage()">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Chat -->
+    <script src="script.js"></script>
+</body>
+</html>

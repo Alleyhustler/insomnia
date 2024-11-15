@@ -1,0 +1,266 @@
+/* General Styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* Portal Section Styling */
+/* Portal Section Styling */
+.portal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+    background-image: url('images/AI\ does\ not\ sleep.gif'); /* Replace with your portal background image path */
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0); /* Add a semi-transparent black overlay */
+    animation: portalAnim 5s ease-in-out infinite;
+}
+
+
+
+.portal h1 {
+    font-size: 4em;
+    color: rgb(65, 58, 58);
+    font-family: 'Creepster', cursive; /* Spooky font */
+    text-shadow: 0px 0px 15px rgba(255, 0, 0, 0.8); /* Glowing text effect */
+    animation: fadeIn 3s ease-out;
+}
+
+.portal button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 1.5em;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    animation: buttonAnim 1s ease-in-out infinite;
+    position: relative;
+}
+
+/* Hover Effect on Enter Button */
+.portal button:hover {
+    transform: scale(1.6);
+    transition: transform 0.2s;
+}
+
+#enter-icon {
+    width: 100px;
+    height: 100px;
+}
+
+/* Button Animation */
+@keyframes buttonAnim {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+/* Fade out and in animation for the icon */
+@keyframes fadeIcon {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Apply the fade animation to the icon */
+#enter-icon.fade {
+    animation: fadeIcon 1s ease-in-out;
+}
+
+/* Icon Hover Animation */
+@keyframes iconHover {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(15deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Portal Background Animation */
+@keyframes portalAnim {
+    0% { filter: brightness(80%); }
+    50% { filter: brightness(120%); }
+    100% { filter: brightness(80%); }
+}
+
+/* Fade-in Animation for Title */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Main Content (Chat Interface) */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Background Image for Chat Section */
+.background {
+    background-image: url('images/Progetto\ senza\ titolo\ \(12\).gif'); /* Replace with the path to your background image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+    font-size: 3em;
+    text-align: center;
+}
+
+/* Chatbox Styling */
+.chat-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#chatbox {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#messages {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+#userInput {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    flex-grow: 1;
+}
+
+button {
+    margin-left: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #af4c4c;
+    color: white;
+    cursor: pointer;
+}
+/* Page-wide fade animation */
+@keyframes fadePage {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+        background-color: black; /* Fade to black */
+
+    }
+    100% {
+        opacity: 0;
+        background-color: rgb(46, 44, 44); /* Fade to black */
+
+    }
+}
+
+
+/* Apply the fade animation to the whole page when transitioning */
+.fade-page {
+    animation: fadePage 1s ease-in-out forwards;
+}
+
+/* Smooth transition on opacity changes for portal and main content */
+.portal, .main-content {
+    transition: opacity 1s ease;
+}
+
+/* Optional: To prevent page jump during fade */
+body {
+    transition: opacity 1s ease;
+}
+
+
+.header-bar {
+    position: absolute;
+    top: 10px; /* Adjust top position as needed */
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 25px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.6); /* Glow effect */
+    animation: slideIn 0.5s forwards, pulse 1.5s infinite ease-in-out;
+    z-index: 2; /* Ensure it’s above the carousel */
+}
+
+@keyframes slideIn {
+    from {
+        top: -80px; /* Off-screen position */
+    }
+    to {
+        top: 10px; /* Final position */
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 15px rgb(255, 0, 0);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(255, 6, 6, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(255, 21, 0, 0.6);
+    }
+}
+
+.header-bar:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-link {
+    display: block;
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+}
+
+.icon {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.icon:hover {
+    transform: rotate(360deg) scale(1.2);
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+}
