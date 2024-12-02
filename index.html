@@ -24,7 +24,7 @@
     </header>
 
 
-    <!-- Entry Screen (Portal) -->
+    <!-- Portal Section -->
     <div id="portal" class="portal">
         <!-- Background Audio -->
         <audio autoplay loop id="background-audio" volume="0.5">
@@ -33,10 +33,15 @@
         </audio>
 
         <h1></h1>
-        <button id="enter-button" onclick="enterChat()">
-            <img src="images/Progetto senza titolo (54).png" alt="Enter" id="enter-icon">
-        </button>
+        <div class="container">
+            <div class="toggle">
+                <input type="checkbox" id="enter-toggle" onclick="enterChat()">
+                <span class="button"></span>
+                <span class="label">☼</span>
+            </div>
+        </div>
     </div>
+
 
     <!-- Main Content (Chat Interface) -->
     <div id="main-content" class="main-content" style="display: none;">
@@ -45,14 +50,19 @@
             <h1></h1>
         </div>
 
-        <!-- Chat Container -->
         <div class="chat-container">
-            <div id="chatbox">
-                <div id="messages"></div>
+            <div class="chat-header">
+                <h2>Nocturne </h2>
+            </div>
+            <div id="chatbox" class="chatbox">
+                <div id="messages" class="messages"></div>
+            </div>
+            <div class="chat-input-container">
                 <input type="text" id="userInput" placeholder="Type a message..." onkeydown="if(event.key === 'Enter') sendMessage()">
                 <button onclick="sendMessage()">Send</button>
             </div>
         </div>
+        
     </div>
 
     <!-- JavaScript for Chat -->

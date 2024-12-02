@@ -64,3 +64,12 @@ function enterChat() {
 
 
 
+// Select the header bar and the portal button/toggle
+const headerBar = document.querySelector('.header-bar');
+const portalToggle = document.querySelector('#enter-toggle'); // Adjust selector based on your HTML
+
+// Add event listener to the portal toggle
+portalToggle.addEventListener('click', () => {
+    // Toggle the portal class
+    headerBar.classList.toggle('in-portal');
+});
